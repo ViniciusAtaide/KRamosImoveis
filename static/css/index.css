@@ -1,0 +1,175 @@
+/* HELPERS */
+.hidden {
+    text-indent: -9999px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+/*/////////*/
+.logo {
+    padding: 0;
+    position: absolute;
+    top: 157px;
+    left: 136px;
+    font-weight: 500;
+}
+
+.linklogo {
+    color: #3f48cc;
+    text-decoration: none;
+    font-size: 75px;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+    padding: 0;
+}
+
+
+
+.mainheader {
+    position: relative;
+    height: 250px;
+    border-bottom: 5px solid #00a2e8;
+}
+
+.mainheader:before {
+    content: '';
+    display: block;
+    background: url('../Images/logo.png');
+    width: 452px;
+    height: 255px;
+    top: 0;'
+    left: 0;
+    position: absolute;
+}
+.middle {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.slogan {
+    margin: 0;
+    position: absolute;
+    top: 244px;
+    font-size: 44px;
+    color: #3f48cc;
+}
+
+.contato {
+    color: #3f48cc;
+    margin: 50px 0 0 380px;
+    list-style-type: none;
+    padding: 0;
+    font-size: 21px;
+}
+
+.contato p {
+    margin: 0;
+    color:
+}
+
+.contato li {
+    margin: 0px 0 29px 0;
+    position: relative;
+}
+.contatos li:nth-child(2) {
+    margin: 0 0 0 50px;
+}
+.contatos li:nth-child(3) {
+    margin: 0 0 0 100px;
+}
+.contatos li:nth-child(4) {
+    margin: 0 0 0 100px;
+}
+
+
+.sk:before {
+    background: url('../Images/skype.png') no-repeat;
+}
+
+.fb:before {
+    background: url('../Images/facebook.png') no-repeat;
+}
+
+.spcont:before {
+    width: 50px;
+    height: 50px;
+    top: -13px;
+    left: -54px;
+    content: ' ';
+    display: block;
+    position: absolute;
+
+}
+
+.email:before {
+    background: url('../Images/email.png') no-repeat;
+}
+.spcont a {
+    text-decoration: none;
+    color: #3f48cc;
+}
+
+.telefones {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    width: 460px;
+    position: absolute;
+    right: 0px;
+    overflow: hidden;
+    top: 0px;
+}
+.telefones li {
+    width: 100%;
+    display: block;
+    padding: 10px 30px;
+    margin: 10px 0;
+    background-color: #3f48cc;
+    color: white
+}
+.telefones li:nth-child(2) {
+    margin: 10px 0 0 50px;
+}
+
+.telefones li:nth-child(3) {
+    margin: 10px 0 0 100px;
+}
+
+.telefones li:nth-child(4) {
+    margin: 10px 0 0 150px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+}
+
+.menu {
+}
+.menu li {
+    display: inline
+}
+a {
+    text-decoration: none;
+}
+.menu li a:after {
+    content: "|";
+}
+.menu li a:last-child{
+    content: ' ';
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
