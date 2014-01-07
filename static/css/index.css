@@ -8,7 +8,48 @@
 .right {
     float: right;
 }
+.relative {
+	position: relative;
+}
+.ovy-hidden {
+	overflow-y: hidden;
+}
+
+.hinherit {
+	height: inherit;
+}
+
+.ov-hidden {
+	overflow: hidden;
+}
+
+
+/*////////*/
+/* Global */
+
+body {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+
+
 /*/////////*/
+/* Header */
+
+
+
+
 .logo {
     padding: 0;
     position: absolute;
@@ -24,12 +65,6 @@
     padding: 0;
 }
 
-body {
-    margin: 0;
-    font-family: "Calibri", sans-serif;
-    padding: 0;
-}
-
 
 
 .mainheader {
@@ -38,14 +73,14 @@ body {
     border-bottom: 5px solid #00a2e8;
 }
 
-.mainheader:before {
+.logo:before {
     content: '';
     display: block;
     background: url('../Images/logo.png');
     width: 452px;
     height: 255px;
-    top: 0;'
-    left: 0;
+    top: -178px;
+    left: -134px;
     position: absolute;
 }
 .middle {
@@ -56,7 +91,7 @@ body {
 .slogan {
     margin: 0;
     position: absolute;
-    top: 244px;
+    top: 0;
     font-size: 44px;
     color: #3f48cc;
 }
@@ -70,8 +105,11 @@ body {
 }
 
 .contato p {
-    margin: 0;
-    color:
+    margin: 0
+}
+.sobreap p {
+	color: white;
+	font-size: 28px;
 }
 
 .contato li {
@@ -85,7 +123,7 @@ body {
     margin: 0 0 0 100px;
 }
 .contatos li:nth-child(4) {
-    margin: 0 0 0 100px;
+    margin: 0 0 0 150px;
 }
 
 
@@ -121,9 +159,9 @@ body {
     margin: 0;
     padding: 0;
     font-size: 22px;
-    width: 460px;
+    width: 9999px;
     position: absolute;
-    right: 0px;
+    left: 650px;
     overflow: hidden;
     top: 0px;
 }
@@ -149,27 +187,234 @@ body {
 
 .navigation {
     position: absolute;
-    bottom: -50px;
-    right: 0;
+    bottom: 0px;
+    left: 435px;
+	float: right;
+	background: #00a2e8;
+	display: block;
+	width:9999px;
+	padding: 0 0 0 7px;
+	height:45px;
 }
+.navigation:before {
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border: 50px solid;
+	border-color: #00a2e8 transparent transparent transparent;
+	left: -50px;
+	content: ' ';
+	z-index: -1;
+}
+
+.menu li {
+    display: block;
+	float: left;
+	text-align: center;
+	line-height: 25px;
+	margin: 5px 0 0 0;
+	padding: 3px 10px 3px 10px;
+	border-right: 3px solid white;
+}
+.menu li:last-child {
+	border: 0;
+}
+.menu li a {
+	color: white;
+}
+
 
 .menu {
-}
-.menu li {
-    display: inline
-}
-a {
-    text-decoration: none;
-}
-.menu li a:after {
-    content: "|";
-}
-.menu li a:last-child{
-    content: ' ';
+	font-size: 24px;
+	line-height: 45px;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+
+.menu-wrapper {
+	height: 50px;
+}
+
+
+
+.main {
+	margin: 60px auto 0 auto;
+	width: 1024px;
+}
+
+.sobreap {
+	position: absolute;
+	bottom: 5px;
+	margin: 0;
+	padding: 25px 0px 0 25px;
+	width: 430px;
+	height: 170px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.slide {
+	position: absolute;
+	z-index: 0;
+	opacity: 0;
+}
+
+.slider {
+	position: relative;
+	height: 410px;
+}
+
+.sobreap h1 {
+	color: white;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 32px;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+}'
+
+.ap {
+	padding: 0;
+	margin: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+.slide.ativo {
+	opacity: 1;
+}
+
+.navslider li {
+	width: 15px;
+	height: 15px;
+	margin: 5px;
+	border-radius: 50%;
+	background-color: white;
+	display: inline-block;
+}
+.navslider li:hover {
+	background-color: black;
+	cursor: pointer;
+}
+
+.navslider {
+	position: absolute;
+	bottom: 0;
+	width: 84px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	height: 27px;
+}
+
+.construcao header {
+	background-color: #00a2e8;
+	color: white;
+	text-align: right;
+	width: 9999px;
+}
+
+.construcao h1 {
+	font-weight: 100;
+}
+
+.construcao {
+	background-color: #3f48cc;
+	margin: 20px 0;
+	padding: 10px 0;
+}
+
+.select {
+	display: inline-block;
+	width: 200px;
+	border-radius: 10px;
+	height: 34px;
+	overflow: hidden;
+	background: url('../Images/setabaixo.png') no-repeat 170px white;
+	margin: 0 0 0 15px;
+}
+.select select {
+	background: white;
+	width: 170px;
+	padding: 5px;
+	font-size: 24px;
+	line-height: 1;
+	color: #676767;
+	font-family: "Calibri", sans-serif;
+	border: 0;
+	border-radius: 5px;
+	height: 34px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.valor {
+	border: 0;
+	padding: 0;
+	width: 150px;
+	height: 36px;
+	position: absolute;
+	top: -1px;
+	border-radius: 10px;
+	font-size: 24px;
+	font-family: 'Calibri', sans-serif;
+	margin: 0 0 0 0;
+	box-sizing: border-box;
+}
+
+#valormax {
+	right: 55px;
+}
+#valormin {
+	right: 215px;
+}
+::-webkit-input-placeholder {
+   color: #676767;
+   font-family: 'Calibri', sans-serif;
+   font-size: 24px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #676767;
+   font-family: 'Calibri', sans-serif;
+   font-size: 24px;
+
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #676767;
+   font-family: 'Calibri', sans-serif;
+   font-size: 24px;
+
+}
+
+:-ms-input-placeholder {
+   color: #676767;
+   font-family: 'Calibri', sans-serif;
+   font-size: 24px;
+
+}
+
+.busca {
+	border-radius: 0;
+	position:absolute;
+	left: 980px;
+	top: 0;
+	width: 1024px;
+
+	background-color: #00a2e8;
+}
+
+.escondebusca {
+	width: 40px;
+	position:absolute;
+	right: 0;
+	top: 0;
+	height: 36px;
+}
+
+.buscasp {
+	background: url('../Images/lupa.png');
 }
