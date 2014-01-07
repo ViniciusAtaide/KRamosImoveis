@@ -22,6 +22,23 @@
 .ov-hidden {
 	overflow: hidden;
 }
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
 
 
 /*////////*/
@@ -41,6 +58,10 @@ ul {
     list-style-type: none;
 }
 
+p, h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+}
 
 
 
@@ -53,7 +74,7 @@ ul {
 .logo {
     padding: 0;
     position: absolute;
-    top: 157px;
+    top: 178px;
     left: 136px;
     font-weight: 500;
 }
@@ -252,11 +273,6 @@ ul {
 	background-color: rgba(0,0,0,0.5);
 }
 
-.slide {
-	position: absolute;
-	z-index: 0;
-	opacity: 0;
-}
 
 .slider {
 	position: relative;
@@ -269,9 +285,13 @@ ul {
 	text-transform: uppercase;
 	font-size: 32px;
 	font-weight: 100;
-	margin: 0;
 	padding: 0;
-}'
+}
+
+.construcao h1 {
+	line-height: 40px;
+	font-weight: 100;
+}
 
 .ap {
 	padding: 0;
@@ -281,20 +301,32 @@ ul {
 figure {
 	margin: 0;
 }
-
+.slide {
+	position: absolute;
+	z-index: 0;
+	opacity: 0;
+	-webkit-transition: opacity .5s ease;
+	transition: opacity .5s ease;
+	-moz-transition: opacity .5s ease;
+}
 .slide.ativo {
 	opacity: 1;
 }
+.paginador {
+	background-color: white;
+}
+.paginador.ativo {
+	background-color: black;
+}
 
-.navslider li {
+.navslider .paginador {
 	width: 15px;
 	height: 15px;
 	margin: 5px;
 	border-radius: 50%;
-	background-color: white;
 	display: inline-block;
 }
-.navslider li:hover {
+.navslider .paginador:hover {
 	background-color: black;
 	cursor: pointer;
 }
@@ -309,18 +341,18 @@ figure {
 	height: 27px;
 }
 
-.construcao header {
+.buscasession header {
 	background-color: #00a2e8;
 	color: white;
 	text-align: right;
 	width: 9999px;
 }
 
-.construcao h1 {
+.buscasession h1 {
 	font-weight: 100;
 }
 
-.construcao {
+.buscasession {
 	background-color: #3f48cc;
 	margin: 20px 0;
 	padding: 10px 0;
@@ -396,17 +428,6 @@ figure {
    font-size: 24px;
 
 }
-
-.busca {
-	border-radius: 0;
-	position:absolute;
-	left: 980px;
-	top: 0;
-	width: 1024px;
-
-	background-color: #00a2e8;
-}
-
 .escondebusca {
 	width: 40px;
 	position:absolute;
@@ -416,5 +437,159 @@ figure {
 }
 
 .buscasp {
-	background: url('../Images/lupa.png');
+	background: url('../Images/lupa.png') no-repeat #00a2e8;
+	position: absolute;
+	right: 0;
+	border: 0;
+	cursor: pointer;
+	top: 0;
+	width: 39px;
+	height: 39px;
+	border-radius: 10px;
+}
+
+.construcao {
+    position: absolute;
+	top: 0;
+    right: 50%;
+	margin-right: 280px;
+	color: white;
+	text-align: right;
+	background: #00a2e8;
+	display: block;
+	width: 9999px;
+	padding: 0 0 0 7px;
+	height:45px;
+}
+
+.construcao:before {
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border: 45px solid;
+	border-color: #00a2e8 transparent transparent transparent;
+	right: -45px;
+	top: 0;
+	content: ' ';
+	z-index: -1;
+}
+
+.construcao-wrapper {
+	border-top: 5px solid #00a2e8;
+	margin-bottom: 50px;
+}
+
+.imovel {
+	margin-right: 77px;
+}
+.imovel:last-child {
+	margin-right: 0;
+}
+
+.imoveis {
+	margin-top: 60px;
+}
+
+.imovel header {
+	text-align: center;
+}
+
+.imovel img {
+	border: 1px solid black;
+	padding: 3px
+}
+
+.footer {
+	background-color: #00a2e8;
+	font-size: 25px;
+}
+
+.creci {
+	margin-top: 4px;
+	margin-left: 25px;
+}
+
+.sobre {
+	margin: 50px 0;
+}
+
+.footercontato li {
+	float: left;	
+	margin: 5px;
+	font-size: 25px;
+}
+.footercontato {
+	width: 350px
+}
+
+.footer p {
+	font-size: 25px;
+}
+
+
+
+.pronto {
+	padding-right: 70px;
+}
+
+.logofooter {
+	position: absolute;
+	bottom: 80px;
+	right: 0;
+	color: #3f48cc;
+}
+.logofooter:before {
+	background: url('../Images/logofooter.png') no-repeat;
+	position: absolute;
+	display: block;
+	width: 232px;
+	height: 132px;
+	content: '';
+	top: -80px;
+	left: -65px;
+}
+
+.footer h3 {
+	font-weight: 100;
+	text-align: center;
+}
+.logofooter p {
+		position: absolute;
+		width: 201px;
+		right: 0px;
+		top: 50px;
+}
+.logofooter h1 {
+	font-weight: 100;
+}
+.faixa-bottom {
+	position: absolute;
+	top: 5px;
+    left: 50%;
+	margin-left: 280px;
+	color: white;
+	text-align: right;
+	background: #00a2e8;
+	display: block;
+	width: 9999px;
+	height:50px;
+
+}
+
+.faixa-bottom:before {
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border: 45px solid;
+	border-color: transparent #00a2e8 transparent transparent;
+	left: -90px;
+	top: 0px;
+	content: ' ';
+	z-index: -1;
+}
+
+.faixa-bottom-wrapper {
+	height: 50px;
 }
