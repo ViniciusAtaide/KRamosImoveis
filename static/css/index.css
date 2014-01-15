@@ -384,8 +384,8 @@ figure {
 
 .valor {
 	border: 0;
-	padding: 0;
-	width: 150px;
+	padding: 07px;
+	width: 152px;
 	height: 36px;
 	position: absolute;
 	top: -1px;
@@ -489,6 +489,7 @@ figure {
 
 .imoveis {
 	margin-top: 60px;
+	border-collapse: collapse;
 }
 
 .imovel header {
@@ -592,4 +593,75 @@ figure {
 
 .faixa-bottom-wrapper {
 	height: 50px;
+}
+
+.white {
+	background-color: white !important;
+
+}
+
+.imoveis th {
+	background-color: #3f48cc;
+	color:white;
+	font-weight: 100;
+	font-size: 20px;
+	padding: 0 68px;
+	border-right: 3px solid white;
+	border-bottom: 10px solid white;
+	border-top: 15px solid white;
+}
+
+.imoveis td {
+	text-align: center;	
+	margin: 12px; 
+	color: white;
+	font-size: 18px;
+}
+
+.imoveis tr {
+	
+}
+
+.listaimoveis {
+	background-color: #00a2e8;
+	margin-top: 10px;
+}
+
+.whitetd {
+	padding: 10px;
+}
+
+.lista {
+	margin-top: 40px;
+}
+
+.resultpagina {
+	background-color: #3f48cc;
+	color: white !important;
+	margin-top: 35px;
+}
+
+.resultpagina li {
+	float: left;
+	font-size: 20px;
+	padding: 5px;
+	color: white !important;
+}
+
+.resultpagina li:first-child {
+	background-color: white;
+	color: #3f48cc !important;
+
+}
+
+.pretencao {
+	padding: 0 5px !important;
+}
+
+.qts {
+	padding: 0 5px !important;
+}
+
+.sts {
+	margin: 0 5px;
 }
