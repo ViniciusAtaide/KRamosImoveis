@@ -88,6 +88,8 @@
 			// Proxima foto
 			$lista.eq(i).addClass('ativo');
 			$paginador.eq(i).addClass('ativo');
+			$paginador.eq(i).addClass('active');
+
 		}
 	};
 })(jQuery);

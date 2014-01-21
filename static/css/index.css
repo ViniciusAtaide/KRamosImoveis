@@ -276,7 +276,6 @@ p, h1, h2, h3, h4 {
 
 .slider {
 	position: relative;
-	height: 410px;
 }
 
 .sobreap h1 {
@@ -502,6 +501,7 @@ figure {
 }
 
 .footer {
+	color: white;
 	background-color: #00a2e8;
 	font-size: 25px;
 }
@@ -619,7 +619,7 @@ figure {
 }
 
 .imoveis tr {
-	
+	border-bottom: 5px solid white;
 }
 
 .listaimoveis {
@@ -636,16 +636,25 @@ figure {
 }
 
 .resultpagina {
-	background-color: #3f48cc;
 	color: white !important;
 	margin-top: 35px;
 }
+	.resultpagina li {
+		background-color: #3f48cc;
+		margin: 0 5px;
+	}
+		.resultpagina a {
+			color: white;
+
+		}
 
 .resultpagina li {
 	float: left;
 	font-size: 20px;
 	padding: 5px;
-	color: white !important;
+}
+.resultpagina li:hover {
+	background-color: #00a2e8;
 }
 
 .resultpagina li:first-child {
@@ -664,4 +673,55 @@ figure {
 
 .sts {
 	margin: 0 5px;
+}
+
+.paginacao {
+	text-align: center;
+	margin: 15px 0 150px 0;
+}
+.paginacao li {
+	display: inline-block;
+	margin: 0 auto;
+
+}
+.paginacao li a {
+	font-size: 22px;
+	display: block;
+	width: 35px;
+	line-height: 35px;
+	background-color: #3f48cc;
+	color: white;
+}
+.paginacao li a:hover {
+	background-color: #00a2e8;
+}
+
+.detalheslider {
+    margin: 0 auto;
+    width: 843px;
+
+}
+
+
+.topo {
+	height: 493px;
+}
+
+.paginador-detalhe {
+	display: inline-block;
+	border: 1px solid black;
+}
+
+.listapaginador {
+	margin-top: 10px;
+	width: 9999px;
+}
+
+.active:after {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	background: black;
 }
