@@ -48,56 +48,72 @@
 		<div class="topo">
 			<article class="foto slide ativo">
 				<figure class="figure item">
-					<img src="http://placehold.it/843x493" alt="Foto">
+					<img src="http://placehold.it/900x493" alt="Foto">
 				</figure>
 			</article>
 			<article class="foto slide">
 				<figure class="figure item">
-					<img src="http://placehold.it/843x493" alt="Foto">
+					<img src="http://placehold.it/900x493" alt="Foto">
 				</figure>
 			</article>
 			<article class="foto slide">
 				<figure class="figure item">
-					<img src="http://placehold.it/843x493" alt="Foto">
+					<img src="http://placehold.it/900x493" alt="Foto">
 				</figure>
 			</article>
 			<article class="foto slide">
 				<figure class="figure item">
-					<img src="http://placehold.it/843x493" alt="Foto">
+					<img src="http://placehold.it/900x493" alt="Foto">
 				</figure>
 			</article>
 			<article class="foto slide">
 				<figure class="figure item">
-					<img src="http://placehold.it/843x493" alt="Foto">
+					<img src="http://placehold.it/900x493" alt="Foto">
 				</figure>
 			</article>
 			<article class="foto slide">
 				<figure class="figure item">
-					<img src="http://placehold.it/843x493" alt="Foto">
+					<img src="http://placehold.it/900x493" alt="Foto">
 				</figure>
 			</article>
+			<div class="controles">
+				<a href="javascript:;" class="prev seta"> < </a>
+				<a href="javascript:;" class="next seta"> > </a>
+			</div>
 		</div>
-		<div class="baixo ov-hidden">
-			<ul class="listapaginador">
-                <li class="paginador paginador-detalhe active" data-val="0">
-                    <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
-                </li>
-                <li class="paginador paginador-detalhe" data-val="1">
-                    <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
-                </li>
-                <li class="paginador paginador-detalhe" data-val="2">
-                    <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
-                </li>
-                <li class="paginador paginador-detalhe" data-val="3">
-                    <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
-                </li>
-				<li class="paginador paginador-detalhe" data-val="4">
-                    <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
-                </li>
-				<li class="paginador paginador-detalhe" data-val="5">
-                    <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
-                </li>
-			</ul>
+		<div class="baixo">
+            <div class="window ov-hidden">
+                <ul class="listapaginador">
+                    <li class="paginador paginador-detalhe active" data-val="0">
+                        <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
+                    </li>
+                    <li class="paginador paginador-detalhe" data-val="1">
+                        <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
+                    </li>
+                    <li class="paginador paginador-detalhe" data-val="2">
+                        <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
+                    </li>
+                    <li class="paginador paginador-detalhe" data-val="3">
+                        <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
+                    </li>
+                    <li class="paginador paginador-detalhe" data-val="4">
+                        <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
+                    </li>
+                    <li class="paginador paginador-detalhe" data-val="5">
+                        <figure class=""><img src="http://placehold.it/163x112" alt=""></figure>
+                    </li>
+                </ul>
+                <div class="setas">
+                    <ul class="nav_list">
+                        <li class="nav_item pagprev">
+                            <a href="javascript:;" class="unslider-arrow prev"> < </a>
+                        </li>
+                        <li class="nav_item pagnext">
+                            <a href="javascript:;" class="unslider-arrow next"> > </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 		</div>
 	</section>
 </main>
@@ -132,8 +148,12 @@
 </footer>
 <script src="static/vendor/jquery/jquery.min.js"></script>
 <script src="static/javascript/jquery.Slider.js"></script>
+<script src="static/javascript/unslider.min.js"></script>
 <script>
     $('.slider').Slider();
+    var slider = $('.baixo').unslider();
+    data = slider.data('unslider');
+    data.start();
 </script>
 </body>
 </html>
