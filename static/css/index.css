@@ -765,9 +765,3 @@ figure {
 .nav_list li {
     display: inline-block;
 }
-.pagprev {
-    float: left;
-}
-.pagnext {
-    float: right
-}
