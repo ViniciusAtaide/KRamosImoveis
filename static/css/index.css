@@ -452,7 +452,7 @@ figure {
     position: absolute;
 	top: 0;
     right: 50%;
-	margin-right: 280px;
+	margin-right: 220px;
 	color: white;
 	text-align: right;
 	background: #00a2e8;
@@ -735,7 +735,7 @@ figure {
 	position: absolute;
 	top: 50%;
 	margin-top: -155px;
-	font-size: 285px;
+	font-size: 185px;
 	line-height: 185px;
 	color: white;
 	font-weight: bolder;
@@ -759,9 +759,32 @@ figure {
 .nav_list {
     position: absolute;
     top: 30px;
+    height: 1px;
     font-size: 60px;
     width: 100%;
 }
 .nav_list li {
     display: inline-block;
+}
+.nav_list li a {
+	color: black;
+}
+
+.detalhamento {
+	margin-top: 40px;	
+}
+.desc, .detalhamento p, .detalhamento li {
+	color: #3f48cc;
+	font-size: 1em;
+	font-weight: normal;
+}
+.desc {
+	margin-bottom: 10px;
+}
+.adicionais {
+	margin: 30px 0;
+}
+
+.desc-wrapper {
+	margin-top: 50px;
 }

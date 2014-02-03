@@ -1,5 +1,5 @@
-
-(function($) {
+'use strict';
+(function ($) {
 	$.fn.Slider = function(attrs) {
 		var defaults = {
 			items : '.slide',
