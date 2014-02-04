@@ -2,10 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Kleber Imoveis</title>
+    <link rel="stylesheet" href="static/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
+<!-- Modal -->
+<div id="modal" aria-hidden="true" tabindex="-1" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Gostou do Imóvel? Tem alguma dúvida?</h1>
+                <p>Entre em contato através deste formulário que nós responderemos suas perguntas.</p>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </header>
+            <section class="modal-body">
+                <form action="#">
+                    <input type="text" class="form-control"  name="Nome" id="nome" placeholder="Nome">
+                    <input type="text" name="telefone" class="form-control" placeholder="Telefone para contato">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                    <textarea name="mensagem" id="mensagem" cols="30" class="form-control" rows="10" placeholder="Deixe sua mensagem aqui..."></textarea>
+                    <a href="#" data-dismiss="modal" class="cancelar">Cancelar</a>
+                    <input class="enviar" type="submit" value="Enviar">
+                </form>
+            </section>
+        </div>
+    </div>
+</div>  
+
 <header class="mainheader">
     <div class="ov-hidden hinherit">
         <div class="middle relative">
@@ -149,7 +174,6 @@
     <div class="middle">
         <div class="desc-wrapper">
             <h2 class="desc">Descrição</h2>
-
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id risus cursus, varius nunc quis, elementum augue. 
                 Vestibulum consectetur orci orci, quis dignissim purus egestas sit amet. Nunc mollis aliquam justo, eget commodo nibh
@@ -157,7 +181,7 @@
                 eget mattis nulla lectus in erat.
             </p>
         </div>
-        <div>
+        <div class="left">
             <ul>
                 <li>4 Quartos</li>
                 <li>2 Suítes</li>
@@ -172,10 +196,10 @@
             </ul>
             
             <p>R$ 500.000,00</p>
-            <div class="right contato caixa">
-                <a href="#">Entre em contato</a><br>
-                <a href="#">Simule pela caixa</a>
-            </div>
+        </div>
+        <div class="right contato caixa">
+            <a class="link-contato" data-toggle="modal" data-target="#modal" id="contato" href="#">Entre em contato</a><br>
+            <a class="link-contato" href="javascript:;">Simule pela caixa</a>
         </div>
     </div>  
 </section>
@@ -209,10 +233,12 @@
     <h3>"Venha conhecer João Pessoa"</h3>
 </footer>
 <script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="static/javascript/jquery.Slider.js"></script>
 <script src="static/javascript/left-Slider.js"></script>
 <script>
     $('.slider').Slider();
+
     $('.baixo').responsiveManySlider({
         slideObjs : '.paginador-detalhe',
         box : '.window',

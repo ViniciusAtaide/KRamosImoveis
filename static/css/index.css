@@ -218,7 +218,7 @@ p, h1, h2, h3, h4 {
 	display: block;
 	width:9999px;
 	padding: 0 0 0 7px;
-	height:45px;
+	height: 50px;
 }
 .navigation:before {
 	display: block;
@@ -787,4 +787,58 @@ figure {
 
 .desc-wrapper {
 	margin-top: 50px;
+}
+
+.link-contato {
+	background: #00a2e8;
+	display: block;
+	color: white;
+	line-height: 40px;
+	width: 200px;	
+	text-align: center;
+	box-shadow: 2px 2px 0px #3f48cc;
+}
+
+.modal-content {
+	background-color: #00a2e8;
+}
+.modal-header {
+	color: white;
+}
+
+.modal-header h1, .modal-header p {
+	font-size: 21px;
+	text-align: center;
+	margin: 15px;
+}
+
+.modal-header .close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.modal-body input, .modal-body textarea {
+	font-size: 20px;
+	border-radius: 0;
+	margin: 20px 0;
+}
+
+.enviar {
+	margin: 0 0 0 257px !important;
+	background: #3f48cc;
+	border: 0;
+	color: white;
+	font-size: 24px;
+	padding: 10px 50px;
+}
+
+.enviar:hover {
+	text-decoration: underline;	
+}
+.modal-body .cancelar {
+	background: #ff3232;
+	color: white;
+	padding: 10px 30px;
+	font-size: 24px;
 }
