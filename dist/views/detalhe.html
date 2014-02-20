@@ -1,0 +1,109 @@
+<section class="slider detalheslider">
+    <div class="topo">
+        <article class="foto slide ativo">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <article class="foto slide">
+            <figure class="figure item">
+                <img src="http://placehold.it/900x493" alt="Foto">
+            </figure>
+        </article>
+        <div class="controles">
+            <a href="javascript:;" class="prev seta"> < </a>
+            <a href="javascript:;" class="next seta"> > </a>
+        </div>
+    </div>
+    <div class="baixo">
+        <div class="window ov-hidden">
+            <ul class="listapaginador">
+                <li class="paginador paginador-detalhe active" data-val="0">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="1">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="2">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="3">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="4">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="5">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="5">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+                <li class="paginador paginador-detalhe" data-val="5">
+                    <figure class=""><img src="http://placehold.it/163x112" width="163" height="112" alt=""></figure>
+                </li>
+
+            </ul>
+            <div class="setas">
+                <ul class="nav_list">
+                    <li class="nav_item left">
+                        <a href="javascript:;" class="pagprev"> < </a>
+                    </li>
+                    <li class="nav_item right">
+                        <a href="javascript:;" class="pagnext"> > </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="../scripts/jquery.Slider.js"></script>
+<script src="../scripts/left-Slider.js"></script>
+<script>
+    $('.slider').Slider();
+
+    $('.baixo').responsiveManySlider({
+        slideObjs : '.paginador-detalhe',
+        box : '.window',
+        paginadorActive: 'ativo',
+        slider : '.listapaginador',
+        nextPaginator : '.pagnext',
+        prevPaginator : '.pagprev',
+        paddingLeft: 0
+    });
+</script>

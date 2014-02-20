@@ -1,0 +1,27 @@
+<section class="lista middle ov-hidden">
+    <ul class="right resultpagina">
+        <li>Resultados por pagina: </li>
+        <li><a href="javascript:;">15</a></li>
+        <li><a href="javascript:;">30</a></li>
+        <li><a href="javascript:;">45</a></li>
+    </ul>
+
+    <table class="imoveis">
+        <tr>
+            <th class="white"> <th>Cidade       <th> Bairro         <th class="pretencao">Quartos <th class="pretencao"> Suítes <th class="pretencao"> Vagas <th class="pretencao"> Pretenção <th> Valor
+
+        <tr class="listaimoveis" ng-repeat="imovel in imoveis">
+            <td class="whitetd"> <a href="imovel/{{ imovel.id }}"><img src="{{ imovel.fotos }}" alt="Placehold"></a>
+            <td> {{ imovel.bairro.cidade }}<td> {{ imovel.bairro }}<td> {{ imovel.quartos }}      <td> {{ imovel.suites }}      <td>
+            {{ imovel.vagas }}     <td> {{ imovel.pretencao }}<td> {{ imovel.valor }}
+
+    </table>
+    <ul class="paginacao">
+        <li><a href="#"><</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">></a></li>
+    </ul>
+</section>
+
