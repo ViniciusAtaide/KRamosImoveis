@@ -1,0 +1,89 @@
+<!-- Modal -->
+<div id="modal" aria-hidden="true" tabindex="-1" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Gostou do Imóvel? Tem alguma dúvida?</h1>
+                <p>Entre em contato através deste formulário que nós responderemos suas perguntas.</p>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </header>
+            <section class="modal-body">
+                <form action="#">
+                    <input type="text" class="form-control"  name="Nome" id="nome" placeholder="Nome">
+                    <input type="text" name="telefone" class="form-control" placeholder="Telefone para contato">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                    <textarea name="mensagem" id="mensagem" cols="30" class="form-control" rows="10" placeholder="Deixe sua mensagem aqui..."></textarea>
+                    <a href="javascript:;" ng-click="modal = false" class="cancelar">Cancelar</a>
+                    <input class="enviar" type="submit" value="Enviar">
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- /modal -->
+
+<section class="slider detalheslider">
+    <div class="topo">
+        <article class="foto slide" ng-class="{ ativo: $first}" ng-repeat="foto in imovel.fotos">
+            <figure class="figure item">
+                <img ng-src="{{ baseurl }}{{ foto.imagem }}" width="900" height="493" alt="Foto">
+            </figure>
+        </article>        
+        <div class="controles">
+            <a href="javascript:;" class="prev seta"> < </a>
+            <a href="javascript:;" class="next seta"> > </a>
+        </div>
+    </div>
+    <div class="baixo">
+        <div class="window ov-hidden">
+            <ul class="listapaginador">
+                <li class="paginador paginador-detalhe active" data-val="{{ $index }}" ng-repeat="foto in imovel.fotos">
+                    <figure class=""><img src="{{ baseurl }}{{ foto.imagem }}" width="163" height="112" alt=""></figure>
+                </li>
+            </ul>
+            <div class="setas">
+                <ul class="nav_list">
+                    <li class="nav_item left">
+                        <a href="javascript:;" class="pagprev"> < </a>
+                    </li>
+                    <li class="nav_item right">
+                        <a href="javascript:;" class="pagnext"> > </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="relative construcao-wrapper detalhamento cf">
+    <div class="construcao">
+        <header>
+            <h1>Detalhamento</h1>
+        </header>
+    </div>
+    <div class="middle">
+        <div class="desc-wrapper">
+            <h2 class="desc">Descrição</h2>
+            <p>
+                {{ imovel.descricao }}
+            </p>
+        </div>
+        <div class="left">
+            <ul>
+                <li><ng-pluralize count="imovel.quartos" when="{'one': '1 quarto', 'other': '{} quartos'}"></ng-pluralize></li>
+                <li><ng-pluralize count="imovel.suites" when="{'one': '1 suite', 'other': '{} suites'}"></ng-pluralize></li>
+                <li><ng-pluralize count="imovel.vagas" when="{'one': '1 vaga', 'other': '{} vagas'}"></ng-pluralize> na garagem</li>
+            </ul>
+            <br>
+            <p class="add">Informações Adicionais</p>
+            <ul class="adicionais">
+                <li ng-repeat="adicional in imovel.adicionais">{{ adicional }}</li>
+            </ul>
+            
+            <p class="preco">{{ imovel.valor_num | currency:"R$"}}</p>
+        </div>
+        <div class="right contato caixa">
+            <a class="link-contato" id="contato" href="javascript:;" ng-click="modal = true">Entre em contato</a><br>
+            <a class="link-contato" href="javascript:;">Simule pela caixa</a>
+        </div>
+    </div>  
+</section>
