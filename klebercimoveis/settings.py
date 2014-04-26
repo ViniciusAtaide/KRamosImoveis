@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname( __file__ ), os.path.pardir))
 
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
@@ -50,9 +51,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -93,11 +91,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:9000'
-)
-
-
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -111,7 +104,17 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT_PATH, 'static'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
