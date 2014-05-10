@@ -23,11 +23,11 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 SECRET_KEY = '+%l4-51t&0!nj71-fuwawpa=&sa$vc1prcx61v)3^qn4p9lf%('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Rest Framework Configuration
 
@@ -73,8 +73,12 @@ WSGI_APPLICATION = 'klebercimoveis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'klebercimoveis',
+	'USER': 'kleberci',
+	'PASSWORD': 'yuri1234SKID',
+	'HOST': 'localhost',
+	'PORT': '',
     }
 }
 
@@ -105,10 +109,6 @@ MEDIA_URL = '/media/'
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT_PATH, 'static'),
-)
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -119,3 +119,4 @@ STATICFILES_FINDERS = (
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
