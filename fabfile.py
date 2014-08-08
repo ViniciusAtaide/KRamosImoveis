@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 from __future import with_statement
 from fabric.api import *
 from fabric.context_managers import shell_env
@@ -18,6 +19,8 @@ def deploy():
 
 	with cd(pwdfront):
 		run('git pull')
+		run('npm install')
+		run('bower install')
 		run('grunt dist')
 		run('cp -avr ./dist/ ' + os.path.join(pwd,'/static/kramosfront'))
 		run('cp ./dist/index.html ' + os.path.join(pwd,'/templates/front/'))
