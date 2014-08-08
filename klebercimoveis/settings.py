@@ -23,7 +23,7 @@ TEMPLATE_DIRS = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = '+%l4-51t&0!nj71-fuwawpa=&sa$vc1prcx61v)3^qn4p9lf%('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = False
 
@@ -56,10 +56,8 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'klebercimoveis.urls'
@@ -72,12 +70,12 @@ WSGI_APPLICATION = 'klebercimoveis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'klebercimoveis',
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'klebercimoveis',
 	'USER': 'kleberci',
 	'PASSWORD': 'yuri1234SKID',
 	'HOST': 'localhost',
-	'PORT': '',
+	'PORT': '5432',
     }
 }
 
@@ -119,7 +117,3 @@ STATICFILES_FINDERS = (
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
-
-INTERNAL_IPS = (
-    '127.0.0.1',
-)
