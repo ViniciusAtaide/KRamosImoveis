@@ -70,12 +70,12 @@ WSGI_APPLICATION = 'klebercimoveis.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'klebercimoveis',
-	'USER': 'kleberci',
-	'PASSWORD': 'yuri1234SKID',
-	'HOST': 'localhost',
-	'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'klebercimoveis',
+    	'USER': 'kleberci',
+    	'PASSWORD': 'yuri1234SKID',
+    	'HOST': 'localhost',
+    	'PORT': '5432',
     }
 }
 
@@ -116,4 +116,10 @@ STATICFILES_FINDERS = (
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
-STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+try:
+    from settings_local import *
+except:
+    pass
+
