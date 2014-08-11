@@ -21,7 +21,7 @@ def deploy():
 		run('npm install')
 		run('bower install')
 		run('grunt --force')
-		run('cp -avr ./front/*' + os.path.join(pwd,'/static/front'))
+		run('cp -avr ./front/* ' + os.path.join(pwd,'/static/front'))
 		run('cp ./front/static/front/index.html ' + os.path.join(pwd,'/templates/front'))
 
 	with cd(pwd):
