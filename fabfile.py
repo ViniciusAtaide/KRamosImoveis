@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-<<<<<<< HEAD
-from __future import with_statement
+from __future__ import with_statement
 from fabric.api import *
 from fabric.context_managers import shell_env
 import os
@@ -15,13 +14,13 @@ pip_bin = venv_bin + 'pip'
 @hosts('yuri@107.170.80.129:8080')
 def deploy():
 	with cd(pwd):
-		run('git pull')
+		run('sudo git pull')
 
 	with cd(pwdfront):
-		run('git pull')
-		run('npm install')
+		run('sudo git pull')
+		run('sudo npm install')
 		run('bower install')
-		run('grunt dist')
+		run('grunt build')
 		run('cp -avr ./dist/ ' + os.path.join(pwd,'/static/kramosfront'))
 		run('cp ./dist/index.html ' + os.path.join(pwd,'/templates/front/'))
 

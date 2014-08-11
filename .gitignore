@@ -1,7 +1,9 @@
 *.pyc
+/.idea
 /static/vendor/*
 /static/kramosfront/node_modules
 /static/kramosfront/dist
 /static/kramosfront/*.tmp
 /static/kramosfront/.sass-cache
 /static/kramosfront/app/bower_components
+/fabfile.py
