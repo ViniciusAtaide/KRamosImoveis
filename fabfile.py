@@ -19,12 +19,11 @@ def deploy():
 	with cd(pwdfront):
 		run('git pull')
 		run('grunt --force')
-		run('cp -avr ./kramosfront/*' + os.path.join(pwd,'/static/front'))
-		run('cp ./kramosfront/index.html ' + os.path.join(pwd,'/templates/front'))
+		run('cp -avr ./front/*' + os.path.join(pwd,'/static/front'))
+		run('cp ./front/static/front/index.html ' + os.path.join(pwd,'/templates/front'))
 
 	with cd(pwd):
-		with shell_env(DJANGO_SETTINGS_MODULE='treloso.settings_production'):
-			run('{0} install -r requeriments.txt'.format(pip_bin))
-			run('{0} manage.py syncdb'.format(python_bin))
-			run('{0} manage.py collectstatic --noinput'.format(python_bin))
-			run('supervisorctl restart kleberci')
+		run('{0} install -r requeriments.txt'.format(pip_bin))
+		run('{0} manage.py syncdb'.format(python_bin))
+		run('{0} manage.py collectstatic --noinput'.format(python_bin))
+		run('supervisorctl restart kleberci')
