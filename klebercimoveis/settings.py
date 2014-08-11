@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname( __file__ ), os.path.pardir))
 
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_DIRS = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -23,7 +23,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 SECRET_KEY = '+%l4-51t&0!nj71-fuwawpa=&sa$vc1prcx61v)3^qn4p9lf%('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = False
 
@@ -56,11 +56,8 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'klebercimoveis.urls'
@@ -75,10 +72,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'klebercimoveis',
-	'USER': 'kleberci',
-	'PASSWORD': 'yuri1234SKID',
-	'HOST': 'localhost',
-	'PORT': '',
+    	'USER': 'kleberci',
+    	'PASSWORD': 'yuri1234SKID',
+    	'HOST': 'localhost',
+    	'PORT': '5432',
     }
 }
 
@@ -120,3 +117,9 @@ STATICFILES_FINDERS = (
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+try:
+    from settings_local import *
+except:
+    pass
+
