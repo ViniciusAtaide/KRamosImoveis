@@ -6,4 +6,3 @@
 /static/kramosfront/*.tmp
 /static/kramosfront/.sass-cache
 /static/kramosfront/app/bower_components
-/fabfile.py
