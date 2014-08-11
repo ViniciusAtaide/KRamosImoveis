@@ -5,9 +5,9 @@ from fabric.context_managers import shell_env
 import os
 
 env.warn_only = True
-pwd = '/opt/myenv/KRamosImoveis'
+pwd = '/opt/myenv/KRamosImoveis/'
 pwdfront = '/opt/kramosfront/'
-venv_bin = '/opt/myenv/bin'
+venv_bin = '/opt/myenv/bin/'
 python_bin = venv_bin + 'python'
 pip_bin = venv_bin + 'pip'
 
