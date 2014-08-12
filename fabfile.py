@@ -22,7 +22,7 @@ def deploy():
 		run('bower install')
 		run('grunt build --force')
 		run('cp -avr ./static/static/ ' + pwd)
-		run('cp ./static/index.html ' + os.path.join(pwd,'templates/front'))
+		run('cp ./static/static/index.html ' + os.path.join(pwd,'templates/front'))
 
 	with cd(pwd):
 		run('{0} install -r requeriments.txt'.format(pip_bin))
