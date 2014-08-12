@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'rest_framework',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
@@ -64,6 +65,10 @@ ROOT_URLCONF = 'klebercimoveis.urls'
 
 WSGI_APPLICATION = 'klebercimoveis.wsgi.application'
 
+TEMPLATE_LOADERS =(
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

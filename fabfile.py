@@ -20,7 +20,7 @@ def deploy():
 		run('git pull')
 		run('npm install')
 		run('bower install')
-		run('grunt --force')
+		run('grunt build --force')
 		run('cp -avr ./static/static/ ' + pwd)
 		run('cp ./static/index.html ' + os.path.join(pwd,'templates/front'))
 
