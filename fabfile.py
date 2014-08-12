@@ -21,8 +21,8 @@ def deploy():
 		run('npm install')
 		run('bower install')
 		run('grunt --force')
-		run('cp -avr ./front/ ' + os.path.join(pwd,'static'))
-		run('cp ./front/index.html ' + os.path.join(pwd,'templates/front'))
+		run('cp -avr ./static/static/ ' + pwd)
+		run('cp ./static/index.html ' + os.path.join(pwd,'templates/front'))
 
 	with cd(pwd):
 		run('{0} install -r requeriments.txt'.format(pip_bin))
