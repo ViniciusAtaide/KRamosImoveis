@@ -25,7 +25,7 @@ class Cidade(models.Model):
 
 
 class Bairro(models.Model):
-    cidade = models.ForeignKey(Cidade)
+    cidade = models.ForeignKey(to=Cidade, related_name="bairros")
     nome = models.CharField(max_length=200)
 
     class Meta:

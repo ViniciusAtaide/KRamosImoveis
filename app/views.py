@@ -7,6 +7,8 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from app.models import Cidade, Bairro, Imovel, Adicional, Foto, Slide, Contato
+from filters import ImovelFilter
+import django_filters
 
 
 class CidadeViewSet(viewsets.ReadOnlyModelViewSet):
@@ -23,6 +25,7 @@ class ImovelViewSet(viewsets.ReadOnlyModelViewSet):
     #permission_classes = (IsAuthenticated,)
     serializer_class = ImovelSerializer
     queryset = Imovel.objects.all()
+    filter_class = ImovelFilter
     
 class SlideViewSet(viewsets.ReadOnlyModelViewSet):
     #permission_classes = (IsAuthenticated,)

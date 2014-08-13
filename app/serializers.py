@@ -3,9 +3,11 @@ from rest_framework import serializers
 from app.models import Cidade, Bairro, Imovel, Adicional, Foto, Slide, Contato
 
 class CidadeSerializer(serializers.ModelSerializer):
+    bairros = serializers.SlugRelatedField(many=True, read_only=True, slug_field='nome')
+
     class Meta:
         model = Cidade
-        fields = ('id', 'nome')
+        fields = ('id', 'nome', 'bairros')
 
 class BairroSerializer(serializers.ModelSerializer):
     cidade = CidadeSerializer(many=False, read_only=True)
@@ -13,6 +15,7 @@ class BairroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bairro
         fields = ('id', 'nome', 'cidade')
+
 
 class FotoSerializer(serializers.ModelSerializer):
     class Meta:
