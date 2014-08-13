@@ -1,7 +1,7 @@
 from app.views import CidadeViewSet, BairroViewSet, ImovelViewSet, SlideViewSet, ContatoViewSet
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import SimpleRouter
 
-router = DefaultRouter()
+router = SimpleRouter()
 router.register(r'cidades' , CidadeViewSet )
 router.register(r'bairros' , BairroViewSet )
 router.register(r'imoveis' , ImovelViewSet )

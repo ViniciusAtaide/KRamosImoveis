@@ -3,3 +3,4 @@ django==1.5.4
 psycopg2
 pillow
 djangorestframework
+django-filter

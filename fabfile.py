@@ -15,14 +15,15 @@ pip_bin = venv_bin + 'pip'
 def deploy():
 	with cd(pwd):
 		run('git pull')
-
+		run('rm -rf static/front')
 	with cd(pwdfront):
 		run('git pull')
 		run('npm install')
 		run('bower install')
-		run('grunt build --force')
-		run('cp -avr ./static/static/ ' + pwd)
-		run('cp ./static/static/index.html ' + os.path.join(pwd,'templates/front'))
+		run('grunt build')
+		run('mv ./dist/static/front ' + os.path.join(pwd,'static'))
+		run('mv ./dist/index.html ' + os.path.join(pwd,'templates/front'))
+		run('cp ./dist/404.html ' + os.path.join(pwd,'templates/front'))
 
 	with cd(pwd):
 		run('{0} install -r requeriments.txt'.format(pip_bin))
