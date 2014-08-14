@@ -6,7 +6,6 @@ from django.conf.urls.static import static
 
 admin.autodiscover()
 
-
 urlpatterns = patterns('',
   # Examples:
   # url(r'^$', 'klebercimoveis.views.home', name='home'),
@@ -15,6 +14,7 @@ urlpatterns = patterns('',
   url(r'^admin/', include(admin.site.urls)),
   url(r'^api/', include("app.api_urls")),
   url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+  url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
 
 static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
