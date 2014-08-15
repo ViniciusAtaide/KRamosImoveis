@@ -59,6 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_ajax_crawling.middleware.HtmlSnapshotMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
@@ -73,6 +74,9 @@ TEMPLATE_LOADERS =(
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+
+
+
 
 DATABASES = {
     'default': {
@@ -123,6 +127,8 @@ STATICFILES_FINDERS = (
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+AJAX_CRAWLING_URLCONF = 'django_ajax_crawling.urls'
 
 try:
     from settings_local import *

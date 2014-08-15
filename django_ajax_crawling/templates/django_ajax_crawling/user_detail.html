@@ -1,0 +1,26 @@
+{% extends 'django_ajax_crawling/base.html' %}
+{% load thumbnail %}
+
+{% block title %}{{ object.profile.name }} - {% endblock %}
+{% block ogtitle %}{{ object.profile.name }} - {% endblock %}
+
+{% block ogimage %}{% spaceless %}
+{% if object.profile.photo %}
+    http://{{ request.get_host }}{{ object.profile.photo.url }}
+{% else %}
+    {{ block.super }}
+{% endif %}
+{% endspaceless %}{% endblock %}
+
+{% block main %}
+    <article>
+        <h1 itemprop="name">{{ object.profile.name }}</h1>
+        {% if object.profile.photo %}
+        <figure>
+            <img src="{{ object.profile.photo.url }}" alt="{{ object.profile.name }}">
+        </figure>
+        {% endif %}
+
+    </article>
+</section>
+{% endblock %}

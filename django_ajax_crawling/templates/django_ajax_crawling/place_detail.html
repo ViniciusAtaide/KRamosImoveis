@@ -1,0 +1,62 @@
+{% extends 'django_ajax_crawling/base.html' %}
+{% load thumbnail %}
+
+{% block title %}{{ object.name }} - {% endblock %}
+{% block ogtitle %}{{ object.name }} - {% endblock %}
+
+{% block ogimage %}{% spaceless %}
+{% if object.photo %}
+    {% thumbnail object.photo "1500x1500" crop="center" as img %}
+    http://{{ request.get_host }}{{ img.url }}
+    {% endthumbnail %}
+{% else %}
+    {{ block.super }}
+{% endif %}
+{% endspaceless %}{% endblock %}
+
+{% block main %}
+    <article itemscope itemtype="http://schema.org/Place">
+        <h2 >
+            <a href="{{ object.get_absolute_url }}" itemprop="name">
+                {{ object.name }}    
+            </a>
+        </h2>
+        {% if object.photo %}
+        <figure>
+            <img src="{{ object.photo.url }}" alt="{{ object.name }}">
+        </figure>
+        {% endif %}
+
+        <p>
+            Estacionamento: {% spaceless %}
+                {% if object.parking == 'Paid' %}
+                Pago
+                {% endif %}
+                {% if object.parking == 'True' %}
+                Sim
+                {% endif %}
+                {% if object.parking == 'False' %}
+                Não
+                {% endif %}
+            {% endspaceless %}
+        </p>
+
+        {% if object.site %}
+        <p>
+            Site: {{ object.site }}
+        </p>
+        {% endif %}
+
+        <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+          <meta itemprop="latitude" content="{{ object.point.y }}" />
+          <meta itemprop="longitude" content="{{ object.point.x }}" />
+        </div>
+
+        <div itemprop="aggregateRating"
+            itemscope itemtype="http://schema.org/AggregateRating">
+           <span itemprop="ratingValue">{{ object.rating.get_real_rating }}</span>/5
+           <span itemprop="reviewCount">{{ object.rating.votes }}</span>
+        </div>
+    </article>
+</section>
+{% endblock %}

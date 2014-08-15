@@ -1,0 +1,100 @@
+{% extends 'django_ajax_crawling/base.html' %}
+
+{% block main %}
+<section class="middle main apartamentos">
+    <div style="height: 1000px;">
+        <carousel interval="interval">
+            {% for slide in slide_list %}
+            <slide active="slide.active" >
+                <img ng-src="media/{{ slide.imagem }}" style="margin: auto;" alt=""/>
+                <div class="carousel-caption">
+                    <a href="{{ slide.url }}" style="color: white; text-decoration: none;">
+                        <h1>{{ slide.texto1 }}</h1>
+                        <p>{{ slide.texto2 }}</p>
+                    </a>
+                </div>
+            </slide>
+            {% endfor %}
+        </carousel>
+    </div>
+</section>
+<section class="buscasession">
+    <div class="ov-hidden">
+        <div class="middle relative">
+            <form ng-submit="busca(filtro)">
+                <div class="select">
+                    <select ng-model="filtro.pretencao" ng-options="p.valor as p.nome for p in pretencoes" class="pretencao">
+                        <option value="">Pretenção</option>
+                        {% for key, value in pretencoes.items %}
+                            <option value="{{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="select">
+                    <select ng-change="escolheCidade(filtro.bairro.cidade.id)" ng-model="filtro.bairro.cidade" ng-options="c.nome for c in cidades" class="pretencao">
+                        <option value="">Cidades</option>
+                        {% for cidade in cidade_list %}
+                            <option value="{{ cidade.nome }}">{{ cidade.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="select">
+                    <select ng-disabled="!filtro.bairro.cidade" ng-model="bairro" ng-options="b for b in bairros" class="pretencao">
+                        <option value="">Bairro</option>
+                    </select>
+                </div>
+                <input type="text" ng-model="filtro.valormin" name="valormin" id="valormin" class="valor" placeholder="Valor Minimo">
+                <input type="text" ng-model="filtro.valormax" name="valormin" id="valormax" class="valor" placeholder="Valor Maximo">
+                <input type="submit" value="" class="sprite buscasp">
+            </form>
+        </div>
+    </div>
+</section>
+<section class="relative construcao-wrapper cf">
+    <div class="construcao">
+        <header>
+            <h1>Imóveis Em Construção</h1>
+        </header>
+    </div>
+    <div class="middle imoveis cf">
+        {% for imovel in imovel_list %}
+        <article class="imovel left" ng-repeat="imovel in lancamentos | limitTo: 4">
+            <figure>
+                <a href="/imovel/{{ imovel.id }}"><img width="190" height="190" ng-src="media/{{ imovel.imagem }}" alt="Foto"></a>
+                <figcaption>
+                    <header>
+                        <p>{{ imovel.bairro.nome }}</p>
+                        <h2>{{ imovel.bairro.cidade.nome }}</h2>
+                        <p>{{ imovel.valor_num }}</p>
+                    </header>
+                </figcaption>
+            </figure>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+<section class="relative construcao-wrapper cf">
+    <div class="construcao pronto">
+        <header>
+            <h1>Imóveis Prontos</h1>
+        </header>
+    </div>
+    <div class="middle imoveis">
+        {% for imovel in completo_list %}
+        <article class="imovel left" ng-repeat="imovel in construcao | limitTo: 4">
+        <figure>
+                <a href="imovel/{{ imovel.id }}"><img width="190" height="190" ng-src="media/{{ imovel.imagem }}" alt="Foto"></a>
+                <figcaption>
+                    <header>
+                        <p>{{ imovel.bairro.nome }}</p>
+                        <h2>{{ imovel.bairro.cidade.nome }}</h2>
+                        <p>{{ imovel.valor_num }}</p>
+                    </header>
+                </figcaption>
+            </figure>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
