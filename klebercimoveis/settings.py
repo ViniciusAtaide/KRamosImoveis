@@ -52,7 +52,9 @@ INSTALLED_APPS = (
     'rest_framework',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
     'app',
+    'financeiro',
 )
 
 MIDDLEWARE_CLASSES = (
