@@ -14,7 +14,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname( __file__ ), os.path.pardir))
 
 
-TEMPLATE_DIRS = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -52,7 +54,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
+    'admin_tools.dashboard',
     'app',
     'financeiro',
 )

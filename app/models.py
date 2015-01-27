@@ -85,7 +85,7 @@ class Imovel(models.Model):
     adicionais  = models.ManyToManyField(Adicional)
     valor       = models.CharField(max_length=200, help_text='Valor pode ser um texto, não esqueça do nome da moeda (R$)')
     valor_num   = models.DecimalField(max_digits=20, decimal_places=2, help_text='Valor para busca')
-    lancamento  = models.BooleanField(u'Lançamento')
+    lancamento  = models.BooleanField(u'Lançamento', default=False)
     entrega     = models.DateTimeField('Data de Entrega', null = True, blank=True)
     publicar    = models.BooleanField(default=True)
 

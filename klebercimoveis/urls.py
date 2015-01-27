@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
+from financeiro.admin import admin_site
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 
@@ -12,6 +13,7 @@ urlpatterns = patterns('',
   # url(r'^blog/', include('blog.urls')),
   url(r'^$', TemplateView.as_view(template_name='front/index.html')),
   url(r'^admin/', include(admin.site.urls)),
+  url(r'^financeiro/', include(admin_site.urls)),
   url(r'^api/', include("app.api_urls")),
   url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
   url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),

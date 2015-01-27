@@ -1,10 +1,12 @@
+# coding: utf-8
 from django.db import models
+
 
 # Create your models here.
 
 class Imovel(models.Model):
 	nome 	= models.CharField(max_length=250)
-	ativo 	= models.BooleanField()
+	ativo 	= models.BooleanField(default=False)
 
 class Alguel(models.Model):
 	imovel 		= models.ForeignKey(Imovel)
@@ -33,8 +35,8 @@ class Temporada(models.Model):
 
 TIPO_VALORES = (
     ('entrada', 'Entrada'),
-    ('saida', 'Saída'),
-    ('deposito', 'Depósito'),
+    ('saida', u'Saída'),
+    ('deposito', u'Depósito'),
 )
 
 class Conta(models.Model):
